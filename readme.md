@@ -43,5 +43,3 @@ let person = {
 };
 printPersonProperty(person, "name");
 ```
-
-
