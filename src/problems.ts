@@ -1,6 +1,4 @@
 {
-  // Problem
-
   function formatString(input: string, toUpper?: boolean): string {
     if (toUpper == false) {
       return input;
@@ -8,8 +6,9 @@
       return input.toUpperCase();
     }
   }
-  console.log(formatString("pronob", false));
-  // Problem 2
+  formatString("Hello");
+  formatString("Hello", true);
+  formatString("Hello", false);
 
   function filterByRating(
     items: { title: string; rating: number }[]
@@ -30,17 +29,14 @@
     { title: "Book C", rating: 6.0 },
     { title: "Book C", rating: 1.0 },
   ];
-  console.log(filterByRating(books));
-
-  // Problem 3
+  filterByRating(books);
 
   function concatenateArrays<T>(...arrays: T[][]): T[] {
     return arrays.flat();
   }
 
-  console.log(concatenateArrays<number>([1, 2], [3, 4], [5]));
-
-  // Problem 4
+  concatenateArrays(["a", "b"], ["c"]);
+  concatenateArrays([1, 2], [3, 4], [5]);
 
   class Vehicle {
     make: string;
@@ -65,12 +61,9 @@
     }
   }
 
-  const vehicle = new Vehicle("vanish", 1990);
-  vehicle.getInfo();
-  const toyotaCar = new Car("toyota", 2020, "Coralla");
-  toyotaCar.getModel();
-
-  //   Problem 5
+  const myCar = new Car("Toyota", 2020, "Corolla");
+  myCar.getInfo();
+  myCar.getModel();
 
   function processValue(value: string | number): number {
     if (typeof value === "number") {
@@ -78,12 +71,11 @@
     } else if (typeof value === "string") {
       return value.length;
     }
-    return 0
+    return 0;
   }
 
-  console.log(processValue("roy"));
-
-  // Problem 6
+  processValue("hello");
+  processValue(10);
 
   interface Product {
     name: string;
@@ -108,8 +100,6 @@
 
   getMostExpensiveProduct(products);
 
-  //   Problem 7
-
   enum Day {
     Monday,
     Tuesday,
@@ -128,21 +118,21 @@
     }
   }
 
-  console.log(getDayType(Day.Friday));
-
-  // Problem 8
+  getDayType(Day.Monday);
+  getDayType(Day.Sunday);
 
   async function squareAsync(n: number): Promise<number> {
     return new Promise((resolve, reject) => {
       if (typeof n == "number" && n > 0)
         setTimeout(() => {
           resolve(n * n);
-        }, 300);
+        }, 1000);
       else {
         reject("Negative number not allowed");
       }
     });
   }
 
-  squareAsync(-4).then(console.log);
+  squareAsync(4).then(console.log);
+  squareAsync(-3).catch(console.error);
 }
