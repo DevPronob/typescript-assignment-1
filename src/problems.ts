@@ -111,7 +111,7 @@
   }
 
   function getDayType(day: Day): string {
-    if (day == Day.Sunday) {
+    if (day === Day.Sunday ||day === Day.Saturday) {
       return "Weekend";
     } else {
       return "Weekday";
