@@ -98,7 +98,7 @@
     price: number;
   }
   function getMostExpensiveProduct(products: Product[]): Product | null {
-    if (!products || products.length === 0) {
+    if (!products || products.length===0) {
       return null;
     }
     const maxProceProduct = products.reduce(function (prev, current) {
